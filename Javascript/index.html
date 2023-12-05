@@ -1,131 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
-        
-        function kilometertometer(kilometer){
-    return "meters: " + (parseFloat(kilometer)*1000)+ " centimeters" +  (parseFloat(kilometer)*100000);
-}
-    function areaofcircle(radius){
-        return "Area of the circle is: " + Math.PI*parseFloat(radius)*parseFloat(radius)
-    }
-    function arthmeticoperationsontwonumbers(numbers){
-        nums = numbers.split(",")
-        num1 = parseFloat(nums[0])
-        num2 = parseFloat(nums[1])
-        return ("Sum: "+ (num1+num2) + " Subtraction: " + (num1-num2) + " Multiplication: " + num1*num2 + " Division: "+num1/num2);
-    }
-    function totalmarksandpercentage(numbers){
-        nums = numbers.split(",")
-        sub1 = parseFloat(nums[0])
-        sub2 = parseFloat(nums[1])
-        return "Total Marks: " + (sub1+sub2) + " Percentage of 200 " + ((sub1+sub2)/200)
-    }
-    function areaandperimeterofarectangle(numbers){
-        nums =numbers.split(",")
-        breadth = parseFloat(nums[0])
-        length = parseFloat(nums[1])
-        return "Area of the Rectangle is "+(length*breadth) + " Perimeter of the Rectangle is: "+(2*(length+breadth))
-    }
-    function averageofNnumbers(numbers){
-        nums = numbers.split(",")
-        sum = 0
-        for (let i=0; i<nums.length;i++){
-            sum = sum+parseFloat(nums[i])
-        }
-        return "Average of given N numbers is: " + (sum/(nums.length))
-    }
-    function distancebetweentwocities(distance){
-        dist = parseFloat(distance)
-        return JSON.stringify({
-                "InMeters": dist * 1000,
-                "InCentimeters": dist * 100000,
-                "InFeet": dist * 3280.84,
-                "InInches": dist * 3280.84 * 12
-            });
-    }
-    function faranheittocentigrade(temp){
-        temp = parseFloat(temp)
-        return ""+temp+" faranheit is equal to "+ ((temp-32)*5/9).toFixed(2) + " Centigrade"
-    }
-    function costanddiscount(numbers){
-        nums = numbers.split(",")
-        quantity = nums[0]
-        cost = nums[1]
-        totalcostofproducts = quantity*cost
-        totaldiscount = .1*totalcostofproducts
-        result = {
-            "TotalCostOfProducts":totalcostofproducts,
-            "TotalDiscount":totaldiscount,
-            "FinalPriceAfterDiscount":totalcostofproducts*.9
-        }
-        return JSON.stringify(result)
-    }
-    function simpleinterest(numbers){
-        values = numbers.split(",")
-        principle = values[0]
-        rateofinterest = values[1]
-        period = values[2]
-        return principle*rateofinterest*period/100
-    }
-    
-    function changeplaceholder(){
-        var funclist = document.getElementById("funclist");
-        var selectedFunction = funclist.selectedIndex;
-        switch(selectedFunction) {
-            case 1 || 2:
-                document.getElementById("input").placeholder = "23"
-                break
-            case 3||4:
-                document.getElementById("input").placeholder = "10,12"
-                break
-
-        }
-
-    }
-
-        function funrun() {
-            var funclist = document.getElementById("funclist");
-            var selectedFunction = funclist.options[funclist.selectedIndex].value;
-            var inputValue = document.getElementById("input").value;
-            if (inputValue !== '') {
-                switch(selectedFunction){
-                    case "kilometertometer":
-                        document.getElementById("result").textContent = kilometertometer((inputValue));
-                        break
-                    case "areaofcircle":
-                        document.getElementById("result").textContent=areaofcircle(inputValue);
-                        break
-                    case "ArthimeticOperations":
-                        document.getElementById("result").textContent = arthmeticoperationsontwonumbers(inputValue);
-                        break
-                    case "TotalMarksandPercentage":
-                        document.getElementById("result").textContent = totalmarksandpercentage(inputValue);
-                        break
-                    case "areaandperimeterofarectangle":
-                        document.getElementById("result").textContent = areaandperimeterofarectangle(inputValue);
-                        break
-                    case "averageofNnumbers":
-                        document.getElementById("result").textContent = averageofNnumbers(inputValue);
-                        break
-                    case "distancebetweentwocities":
-                        document.getElementById("result").textContent = distancebetweentwocities(inputValue);
-                        break
-                    case "faranheittocentigrade":
-                        document.getElementById("result").textContent = faranheittocentigrade(inputValue);
-                        break
-                    case "costanddiscount":
-                        document.getElementById("result").textContent = costanddiscount(inputValue);
-                        break
-                    case "simpleinterest":
-                        document.getElementById("result").textContent = simpleinterest(inputValue);
-                        break
-                    default:
-                        document.getElementById("result").textContent = "Please enter a valid number";
-                    }
-        }
-    }
-    </script>
+    <script src="practice.js"></script>
 </head>
 <body>
     <form id="formm">
@@ -142,6 +18,16 @@
             <option value="faranheittocentigrade">Faranheit to Centigrade</option>
             <option value="costanddiscount">Discounted price for given quantity and cost per piece</option>
             <option value="simpleinterest">Simple interest for the given principle,rate of interest and period</option>
+            <option value ='greaterthan10'>Log if the number is greater than 10</option>
+            <option value="areyoueligibletodrive">Are you Eligible to Drive</option>
+            <option value="whatismygrade">What is my Grade</option>
+            <option value="wishmeatmytime">Wish Me at My time</option>
+            <option value="whichdayistoday">Which day of the week are we in</option>
+            <option value="whatisthemonthname">Which Month of the year are we in</option>
+            <option value="typeoffruit">Enter the radius of the fruit and know the type</option>
+            <option value="templevel">Know the temperature level</option>
+            <option value="posnegevod">IS my num positive negative even odd</option>
+            <option value="username">Is my Username Acceptable</option>
         </select>
         <p>Enter the value: <input type="text" oninput="" id="input" placeholder="1,2"/></p>
         <input type="submit" value="RUN">
