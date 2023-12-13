@@ -544,18 +544,6 @@ function fizzbuzz(){
 
     }
 }
-function isprime(num){
-    num = Math.abs(num)
-    if (num ==1 | num ==0){
-        return false
-    }
-    for (let i=2;i<num;i++){
-        if (num%i==0){
-            return false
-        }
-    }
-    return true
-}
 function numberofprimes(num1,num2){
     count = 0
     for(let i=num1;i<(num2+1);i++){
@@ -565,7 +553,18 @@ function numberofprimes(num1,num2){
     }
     return count
 }
-console.log(numberofprimes(1,10))
+
+function printparrern1(n){
+    res = ''
+    for(let i =1;i<n;i++){
+        res += '*'
+        console.log('*'*i)
+    }
+}
+
+
+
+
 function changeplaceholder(){
     var funclist = document.getElementById("funclist");
     var selectedFunction = funclist.selectedIndex;
